@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App-Ausfall</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 18px;
+            text-align: center;
+            z-index: 1000;
+            padding: 20px;
+        }
+        .message-box {
+            background-color: #ff4d4d;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+            text-align: left;
+        }
+        .error-code {
+            font-weight: bold;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        .error-details {
+            margin-bottom: 20px;
+        }
+        .error-description {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .error-solution {
+            font-size: 14px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay">
+        <div class="message-box">
+            <div class="error-code">Fehler 503: Service Unavailable</div>
+            <div class="error-details">
+                <div class="error-description">
+                    Die App ist derzeit aufgrund eines technischen Problems nicht verfügbar.
+                </div>
+                <div class="error-description">
+                    Unser Team arbeitet bereits an einer Lösung.
+                </div>
+                <div class="error-description">
+                    Fehlerquelle: Serverüberlastung oder Wartungsarbeiten.
+                </div>
+            </div>
+            <div class="error-solution">
+                Bitte versuchen Sie es später noch einmal. Wir entschuldigen uns für die Unannehmlichkeiten.
+            </div>
+        </div>
+    </div>
+</body>
+</html>

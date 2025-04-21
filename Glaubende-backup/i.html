@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Gebetsplan</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #121212;
+      color: #ffffff;
+      padding: 20px;
+    }
+
+    h1, h2 {
+      color: #f0c000;
+    }
+
+    .gebet {
+      background-color: #1e1e1e;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 8px;
+    }
+
+    .zeit {
+      font-size: 0.9em;
+      color: #aaa;
+      margin-bottom: 8px;
+    }
+
+    .logo {
+      font-size: 2.5em;
+      color: #f0c000;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 0.8em;
+      color: #555;
+      border-top: 1px solid #333;
+      margin-top: 40px;
+      padding-top: 20px;
+    }
+
+    /* Menü */
+    .menu-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      font-size: 1.6em;
+      color: #f0c000;
+      z-index: 999;
+      cursor: pointer;
+    }
+
+    .sidebar {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      top: 0;
+      right: 0;
+      background-color: #1e1e1e;
+      overflow-x: hidden;
+      transition: 0.3s;
+      z-index: 998;
+      padding-top: 60px;
+    }
+
+    .sidebar a {
+      display: block;
+      padding: 12px 24px;
+      color: #f0c000;
+      text-decoration: none;
+      font-size: 1.1em;
+    }
+
+    .sidebar a:hover {
+      background-color: #333;
+    }
+
+    .sidebar .closebtn {
+      position: absolute;
+      top: 15px;
+      right: 25px;
+      font-size: 1.5em;
+    }
+
+    /* Sections */
+    .section {
+      display: none;
+    }
+
+    .section.active {
+      display: block;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Menü Icon -->
+  <div class="menu-toggle" onclick="openMenu()">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <!-- Sidebar Menü -->
+  <div id="sidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeMenu()"><i class="fas fa-times"></i></a>
+    <a href="#" onclick="showSection('start')">Startseite</a>
+    <a href="#" onclick="showSection('wochentag')">Wochentag</a>
+    <a href="#" onclick="showSection('ostern')">Ostern</a>
+    <a href="#" onclick="showSection('advent')">Advent</a>
+    <a href="#" onclick="showSection('feiertag')">Feiertag</a>
+    <a href="#" onclick="showSection('verse')">Bibelverse</a>
+    <a href="#" onclick="showSection('update')">Update</a>
+    <a href="#" onclick="showSection('aboutme')">About Me</a>
+    <a href="#" onclick="showSection('support')">Support</a>
+  </div>
+
+  <!-- SECTIONS -->
+  <div id="start" class="section active">
+    <div class="logo"><i class="fas fa-cross"></i></div>
+    <h1>Täglicher Gebetsplan</h1>
+
+    
+
+    <div class="block">
+      <h2>Morgens</h2>
+      <div class="zeit">ca. 07:00 Uhr</div>
+      <div class="gebet">
+        <strong>Kreuzzeichen:</strong><br>
+        Im Namen des Vaters und des Sohnes und des Heiligen Geistes. Amen.
+      </div>
+      <div class="gebet">
+        <strong>Morgengebet:</strong><br>
+        Guter Gott, ich danke dir für die Nacht und den neuen Tag.<br>
+        Begleite mich in allem, was ich heute tue.<br>
+        Schenke mir Kraft, Geduld und ein gutes Herz.<br>
+        Sei bei mir und bei allen, die ich liebe. Amen.
+      </div>
+      <div class="gebet">
+        <strong>Vaterunser:</strong><br>
+        Vater unser im Himmel,<br>
+        geheiligt werde dein Name.<br>
+        Dein Reich komme.<br>
+        Dein Wille geschehe,<br>
+        wie im Himmel, so auf Erden.<br>
+        Unser tägliches Brot gib uns heute.<br>
+        Und vergib uns unsere Schuld,<br>
+        wie auch wir vergeben unseren Schuldigern.<br>
+        Und führe uns nicht in Versuchung,<br>
+        sondern erlöse uns von dem Bösen. Amen.
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Mittags</h2>
+      <div class="zeit">ca. 12:00 Uhr</div>
+      <div class="gebet">
+        <strong>Kreuzzeichen:</strong><br>
+        Im Namen des Vaters und des Sohnes und des Heiligen Geistes. Amen.
+      </div>
+
+      <div class="gebet">
+        <strong>Kurzes Mittagsgebet:</strong><br>
+        Herr, ich danke dir für diesen Tag bis hierhin.<br>
+        Schenke mir weiterhin Kraft und Frieden.<br>
+        Sei bei allen, die Hilfe brauchen. Amen.
+      </div>
+      <div class="gebet">
+        <strong>Vaterunser:</strong><br>
+        Vater unser im Himmel,<br>
+        geheiligt werde dein Name.<br>
+        Dein Reich komme.<br>
+        Dein Wille geschehe,<br>
+        wie im Himmel, so auf Erden.<br>
+        Unser tägliches Brot gib uns heute.<br>
+        Und vergib uns unsere Schuld,<br>
+        wie auch wir vergeben unseren Schuldigern.<br>
+        Und führe uns nicht in Versuchung,<br>
+        sondern erlöse uns von dem Bösen. Amen.
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Abends</h2>
+      <div class="zeit">ca. 21:00 Uhr</div>
+      <div class="gebet">
+        <strong>Kreuzzeichen:</strong><br>
+        Im Namen des Vaters und des Sohnes und des Heiligen Geistes. Amen.
+      </div>
+      <div class="gebet">
+        <strong>Abendgebet:</strong><br>
+        Lieber Gott, ich danke dir für diesen Tag.<br>
+        Vergib mir, wo ich Fehler gemacht habe.<br>
+        Sei bei mir in der Nacht, und bei allen, die alleine oder traurig sind.<br>
+        Schenke mir Ruhe, Schutz und Frieden. Amen.
+      </div>
+      <div class="gebet">
+        <strong>Vaterunser:</strong><br>
+        Vater unser im Himmel,<br>
+        geheiligt werde dein Name.<br>
+        Dein Reich komme.<br>
+        Dein Wille geschehe,<br>
+        wie im Himmel, so auf Erden.<br>
+        Unser tägliches Brot gib uns heute.<br>
+        Und vergib uns unsere Schuld,<br>
+        wie auch wir vergeben unseren Schuldigern.<br>
+        Und führe uns nicht in Versuchung,<br>
+        sondern erlöse uns von dem Bösen. Amen.
+      </div>
+      <div class="gebet">
+        <strong>Tagesrückblick:</strong><br>
+        Was war heute gut? Was kann ich morgen besser machen?<br>
+        Danke für alles, was du mir gegeben hast.
+      </div>
+    </div>
+
+
+  <div id="wochentag" class="section">
+    <h2>Gebete nach Wochentag</h2>
+    <div class="block">
+      <h2>Montag – Neuanfang mit Gott</h2>
+      <div class="gebet">
+        Ein neuer Wochenbeginn ist eine Chance, mit Gottes Hilfe neu zu starten. <br>
+        Bitte Gott um Führung für deine Aufgaben, Entscheidungen und Begegnungen. <br>
+        „Herr, zeige mir den Weg, den ich gehen soll.“ (Psalm 143,8)
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Dienstag – Dienen in Liebe</h2>
+      <div class="gebet">
+        Jesus hat uns gezeigt, dass wahre Größe im Dienen liegt. <br>
+        Frage dich heute: Wem kann ich heute in Liebe begegnen oder helfen? <br>
+        „Dient einander in Liebe.“ (Galater 5,13)
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Mittwoch – Kraft aus dem Gebet</h2>
+      <div class="gebet">
+        In der Mitte der Woche darfst du neue Kraft im Gebet schöpfen. <br>
+        Gott hört dich – mit all deinen Sorgen, Bitten und deinem Dank. <br>
+        „Betet ohne Unterlass.“ (1. Thessalonicher 5,17)
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Donnerstag – Dankbarkeit leben</h2>
+      <div class="gebet">
+        Der Alltag bietet viele kleine Gründe zum Danken: ein Lächeln, gutes Wetter, ein Gespräch. <br>
+        Nimm sie wahr und danke Gott dafür. <br>
+        „Seid dankbar in allen Dingen.“ (1. Thessalonicher 5,18)
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Freitag – Erinnerung an das Kreuz</h2>
+      <div class="gebet">
+        Am Freitag erinnern sich Christen besonders an das Leiden und Sterben Jesu. <br>
+        Nimm dir Zeit für Stille, Besinnung und Dank für Jesu Opfer am Kreuz. <br>
+        „Er hat uns zuerst geliebt.“ (1. Johannes 4,19)
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Samstag – Tag der Ruhe und Vorbereitung</h2>
+      <div class="gebet">
+        Nutze den Samstag, um zur Ruhe zu kommen und dich auf den Sonntag vorzubereiten – den Tag des Herrn. <br>
+        Vielleicht kannst du bewusst Zeit mit deiner Familie oder mit Gott verbringen. <br>
+        „Kommt alle zu mir, die ihr mühselig und beladen seid, und ich werde euch Ruhe geben.“ (Matthäus 11,28)
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Sonntag – Feier der Auferstehung</h2>
+      <div class="gebet">
+        Der Sonntag ist der wichtigste Tag für Christen: Jesus ist auferstanden! <br>
+        Besuche nach Möglichkeit einen Gottesdienst, singe, bete, freue dich. <br>
+        „Dies ist der Tag, den der Herr gemacht hat – wir wollen jubeln und uns freuen.“ (Psalm 118,24)
+
+
+  </div>
+
+  <div id="ostern" class="section">
+    <h2>Ostern</h2>
+    <p>Er feiert die Auferstehung – das Licht siegt! Gebete zur Hoffnung, Leben und Sieg über den Tod.</p>
+  </div>
+
+  <div id="advent" class="section">
+    <h2>Advent</h2>
+    <p>Warten auf das Licht. Besinnliche Impulse und Gebete für die Vorbereitung auf Weihnachten.</p>
+  </div>
+
+  <div id="feiertag" class="section">
+    <h2>Feiertage</h2>
+    <p>Gebete und Gedanken für besondere christliche Feste im Jahreslauf.</p>
+  </div>
+
+  <div id="verse" class="section">
+    <h2>Bibelverse</h2>
+
+    <div class="block">
+      <h2>Hoffnung</h2>
+      <div class="gebet">
+        „Denn ich weiß wohl, was ich für Gedanken über euch habe, spricht der HERR: Gedanken des Friedens und nicht des Leides, dass ich euch gebe Zukunft und Hoffnung.“<br>
+        – Jeremia 29,11
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Hoffnung</h2>
+      <div class="gebet">
+        „Sei getrost und unverzagt, hoffe auf den HERRN!“<br>
+        – Psalm 27,14
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Hoffnung</h2>
+      <div class="gebet">
+        „Die aber auf den HERRN harren, kriegen neue Kraft, dass sie auffahren mit Flügeln wie Adler.“<br>
+        – Jesaja 40,31
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Hoffnung</h2>
+      <div class="gebet">
+        „Der Gott der Hoffnung aber erfülle euch mit aller Freude und Frieden im Glauben.“<br>
+        – Römer 15,13
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Hoffnung</h2>
+      <div class="gebet">
+        „Durch Hoffnung sind wir gerettet. Hoffnung aber, die man sieht, ist keine Hoffnung.“<br>
+        – Römer 8,24
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Hoffnung</h2>
+      <div class="gebet">
+        „Gott ist mein Fels und meine Hilfe, meine sichere Zuflucht. Ich werde nicht wanken.“<br>
+        – Psalm 62,7
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Hoffnung</h2>
+      <div class="gebet">
+        „Ich aber will ausschauen nach dem HERRN und harren auf den Gott meines Heils.“<br>
+        – Micha 7,7
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Hoffnung</h2>
+      <div class="gebet">
+        „Selig ist, wer seine Hoffnung auf den HERRN setzt und sich nicht wendet zu den Stolzen.“<br>
+        – Psalm 40,5
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Hoffnung</h2>
+      <div class="gebet">
+        „Denn der HERR ist gut zu dem, der auf ihn hofft, zu der Seele, die ihn sucht.“<br>
+        – Klagelieder 3,25
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Hoffnung</h2>
+      <div class="gebet">
+        „Lasst uns festhalten an dem Bekenntnis der Hoffnung und nicht wanken; denn er ist treu, der sie verheißen hat.“<br>
+        – Hebräer 10,23
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Gottes Liebe</h2>
+      <div class="gebet">
+        „Denn so sehr hat Gott die Welt geliebt, dass er seinen einzigen Sohn gab, damit jeder, der an ihn glaubt, nicht verloren geht, sondern ewiges Leben hat.“<br>
+        – Johannes 3,16
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Gottes Liebe</h2>
+      <div class="gebet">
+        „Gott aber erweist seine Liebe zu uns darin, dass Christus für uns gestorben ist, als wir noch Sünder waren.“<br>
+        – Römer 5,8
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Gottes Liebe</h2>
+      <div class="gebet">
+        „Der HERR ist barmherzig und gnädig, geduldig und von großer Güte.“<br>
+        – Psalm 103,8
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Gottes Liebe</h2>
+      <div class="gebet">
+        „Wie sich ein Vater über Kinder erbarmt, so erbarmt sich der HERR über die, die ihn fürchten.“<br>
+        – Psalm 103,13
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Gottes Liebe</h2>
+      <div class="gebet">
+        „Die Güte des HERRN hat kein Ende, sein Erbarmen hört nie auf.“<br>
+        – Klagelieder 3,22
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Gottes Liebe</h2>
+      <div class="gebet">
+        „Wer nicht liebt, der kennt Gott nicht; denn Gott ist Liebe.“<br>
+        – 1. Johannes 4,8
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Gottes Liebe</h2>
+      <div class="gebet">
+        „Siehe, ich habe dich in meine Hände gezeichnet; deine Mauern sind allezeit vor mir.“<br>
+        – Jesaja 49,16
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Gottes Liebe</h2>
+      <div class="gebet">
+        „Denn der HERR ist gut; seine Gnade währt ewig und seine Treue für und für.“<br>
+        – Psalm 100,5
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Gottes Liebe</h2>
+      <div class="gebet">
+        „Ich habe dich je und je geliebt; darum habe ich dich zu mir gezogen aus lauter Güte.“<br>
+        – Jeremia 31,3
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Gottes Liebe</h2>
+      <div class="gebet">
+        „In Liebe hat er uns vorherbestimmt zur Kindschaft durch Jesus Christus für sich selbst.“<br>
+        – Epheser 1,5
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Vertrauen</h2>
+      <div class="gebet">
+        „Vertraue auf den HERRN von ganzem Herzen und verlass dich nicht auf deinen Verstand.“<br>
+        – Sprüche 3,5
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Vertrauen</h2>
+      <div class="gebet">
+        „Befiehl dem HERRN deine Wege und hoffe auf ihn, er wird's wohl machen.“<br>
+        – Psalm 37,5
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Vertrauen</h2>
+      <div class="gebet">
+        „Wenn ich mich fürchte, so hoffe ich auf dich.“<br>
+        – Psalm 56,4
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Vertrauen</h2>
+      <div class="gebet">
+        „Wer auf den HERRN vertraut, ist geborgen.“<br>
+        – Sprüche 29,25
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Vertrauen</h2>
+      <div class="gebet">
+        „In stiller Ruhe und Vertrauen liegt eure Stärke.“<br>
+        – Jesaja 30,15
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Vertrauen</h2>
+      <div class="gebet">
+        „Gesegnet ist der Mann, der sich auf den HERRN verlässt und dessen Zuversicht der HERR ist.“<br>
+        – Jeremia 17,7
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Vertrauen</h2>
+      <div class="gebet">
+        „Wer den HERRN fürchtet, hat eine sichere Zuflucht, und seine Kinder haben eine Zuflucht.“<br>
+        – Sprüche 14,26
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Vertrauen</h2>
+      <div class="gebet">
+        „Ich aber hoffe, HERR, auf dich und spreche: Du bist mein Gott.“<br>
+        – Psalm 31,15
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Vertrauen</h2>
+      <div class="gebet">
+        „Die auf den HERRN vertrauen, sind wie der Berg Zion, der nicht wankt, sondern ewig bleibt.“<br>
+        – Psalm 125,1
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Vertrauen</h2>
+      <div class="gebet">
+        „Habe ich dir nicht geboten: Sei stark und mutig? Fürchte dich nicht und erschrick nicht!“<br>
+        – Josua 1,9
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Trost</h2>
+      <div class="gebet">
+        „Der HERR ist nahe denen, die zerbrochenen Herzens sind.“<br>
+        – Psalm 34,19
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Trost</h2>
+      <div class="gebet">
+        „Gelobt sei Gott, der Vater der Barmherzigkeit und Gott allen Trostes.“<br>
+        – 2. Korinther 1,3
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Trost</h2>
+      <div class="gebet">
+        „Ich will euch trösten, wie einen seine Mutter tröstet.“<br>
+        – Jesaja 66,13
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Trost</h2>
+      <div class="gebet">
+        „Auch wenn ich wandere im finsteren Tal, fürchte ich kein Unglück; denn du bist bei mir.“<br>
+        – Psalm 23,4
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Trost</h2>
+      <div class="gebet">
+        „Dein Stecken und Stab trösten mich.“<br>
+        – Psalm 23,4b
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Trost</h2>
+      <div class="gebet">
+        „Selig sind, die da Leid tragen; denn sie sollen getröstet werden.“<br>
+        – Matthäus 5,4
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Trost</h2>
+      <div class="gebet">
+        „Denn der HERR tröstet Zion, er tröstet alle ihre Trümmer.“<br>
+        – Jesaja 51,3
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Trost</h2>
+      <div class="gebet">
+        „Gott wird abwischen alle Tränen von ihren Augen.“<br>
+        – Offenbarung 21,4
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Trost</h2>
+      <div class="gebet">
+        „Er heilt, die zerbrochenen Herzens sind, und verbindet ihre Wunden.“<br>
+        – Psalm 147,3
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Trost</h2>
+      <div class="gebet">
+        „Dein Trost erfreut meine Seele.“<br>
+        – Psalm 94,19
+      </div>
+    </div>
+
+
+    <div class="block">
+      <h2>Frieden</h2>
+      <div class="gebet">
+        „Den Frieden lasse ich euch, meinen Frieden gebe ich euch; nicht wie die Welt gibt, gebe ich euch.“<br>
+        – Johannes 14,27
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Frieden</h2>
+      <div class="gebet">
+        „Glückselig sind, die Frieden stiften; denn sie werden Gottes Kinder heißen.“<br>
+        – Matthäus 5,9
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Frieden</h2>
+      <div class="gebet">
+        „Der HERR segne dich und behüte dich... und gebe dir Frieden.“<br>
+        – 4. Mose 6,24–26
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Frieden</h2>
+      <div class="gebet">
+        „Und der Friede Gottes, der höher ist als alle Vernunft, bewahre eure Herzen.“<br>
+        – Philipper 4,7
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Frieden</h2>
+      <div class="gebet">
+        „Großen Frieden haben, die dein Gesetz lieben.“<br>
+        – Psalm 119,165
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Frieden</h2>
+      <div class="gebet">
+        „Bemüht euch um Frieden mit jedermann.“<br>
+        – Hebräer 12,14
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Frieden</h2>
+      <div class="gebet">
+        „Suche Frieden und jage ihm nach!“<br>
+        – Psalm 34,15
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Frieden</h2>
+      <div class="gebet">
+        „In Frieden will ich mich legen und schlafen; denn du allein, HERR, lässt mich sicher wohnen.“<br>
+        – Psalm 4,9
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Frieden</h2>
+      <div class="gebet">
+        „Denn er ist unser Friede.“<br>
+        – Epheser 2,14
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Frieden</h2>
+      <div class="gebet">
+        „Ich will euch Zukunft und Hoffnung geben.“<br>
+        – Jeremia 29,11
+      </div>
+    </div>
+
+
+
+  </div>
+
+  <div id="update" class="section">
+    <h2>Update</h2>
+    <p>Letztes Update: April 2025<br>+ Design überarbeitet<br>+ Menü-Logik angepasst<br>+ Inhalte erweitert</p>
+  </div>
+
+  <div id="aboutme" class="section">
+    <h2>About Me</h2>
+    <p>Ich bin Mikail – diese App ist aus Herzblut entstanden, um dich täglich spirituell zu stärken.</p>
+  </div>
+
+  <div id="support" class="section">
+    <h2>Support</h2>
+    <p>Fragen oder Ideen? Schreib an: <a href="mailto:mikailoffiziell9@mail.com" style="color:#f0c000;">Mikailoffiziell9@mail.com</a></p>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">© <span id="year"></span> – Gebetsplan App</div>
+
+  <script>
+    function openMenu() {
+      document.getElementById("sidebar").style.width = "250px";
+      document.querySelector(".menu-toggle").style.display = "none";
+    }
+
+    function closeMenu() {
+      document.getElementById("sidebar").style.width = "0";
+      document.querySelector(".menu-toggle").style.display = "block";
+    }
+
+    function showSection(id) {
+      document.querySelectorAll(".section").forEach(sec => sec.classList.remove("active"));
+      document.getElementById(id).classList.add("active");
+      closeMenu();
+    }
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
